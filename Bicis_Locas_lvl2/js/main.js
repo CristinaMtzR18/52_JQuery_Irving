@@ -33,7 +33,7 @@ $(document).ready(function() {
 	 });
 	//Validacion del campo NOMBRE
 	$("#name").keyup( function(){
-		console.log("Provando validacion de NOMBRE");
+		console.log("Probando validacion de NOMBRE");
 		//variable para nombre
 		var texto = $("#name").val();
 		$(".error").remove();
@@ -52,7 +52,7 @@ $(document).ready(function() {
 	});
 	//Validacion del campo APELLIDO
 	$("#lastname").keyup( function(){
-		console.log("Provando validacion de Apellido");
+		console.log("Probando validacion de Apellido");
 		//variable para apellido
 		var texto = $("#lastname").val();
 		$(".error").remove();
@@ -73,7 +73,7 @@ $(document).ready(function() {
 	//regex correo
 	var regexCorreo = /^([a-z]+[a-z1-9._-]*)@{1}([a-z1-9\.]{2,})\.([a-z]{2,3})$/;
 	$("#input-email").keyup( function(){
-		console.log("Provando validacion de correo");
+		console.log("Probando validacion de correo");
 		//variable para correo
 		var texto = $("#input-email").val();
 		$(".error").remove();
@@ -86,7 +86,7 @@ $(document).ready(function() {
 	});
 	//Validacion del campo CONTRASEÑA
 	$("#input-password").keyup( function(){
-		console.log("Provando validacion de contraseña");
+		console.log("Probando validacion de contraseña");
 		//variable para correo
 		var texto = $("#input-password").val();
 		$(".error").remove();
@@ -110,6 +110,21 @@ $(document).ready(function() {
 			return false;
 		}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 	});
+	//Validacion del campo OPCIONES
+	//obtener el valor de un campo de selección “select” despues del evento “change“
+	$("#opciones").click('change', function(){
+		console.log("Probando validacion de opciones");
+		//variable para correo
+		var texto = $("#opciones").val();
+		$(".error").remove();
+		//validacion de numeros
+		if(texto == 0){
+			console.log("valor invalido");
+			$("#opciones").focus().after('<span class="error">Selecciona tipo de bici</span>');
+			return false;
+		}
+	});
+
 });
 
 
